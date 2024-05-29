@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consulta de Endereço por CEP</title>
+</head>
+<body>
+  <h1>Consulta de Endereço por CEP</h1>
+  <label for="cepInput">Digite o CEP:</label>
+  <input type="text" id="cepInput" placeholder="Exemplo: 12345-678">
+  <button onclick="searchAddress()">Consultar</button>
+  <div id="result">
+    <!-- Os resultados serão exibidos aqui -->
+  </div>
+  <script>
+    function searchAddress() {
+      const cepInput = document.getElementById("cepInput");
+      const cep = cepInput.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+      if (cep.length !== 8) {
+        alert("O CEP deve conter 8 dígitos.");
+        return;
+      }
+
+      const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.erro) {
+            document.getElementById("result").innerHTML = "CEP não encontrado.";
+          } else {
+            const addressInfo = `
+              <p><strong>CEP:</strong> ${data.cep}</p>
+              <p><strong>Rua:</strong> ${data.logradouro}</p>
+              <p><strong>Complemento:</strong> ${data.complemento}</p>
+              <p><strong>Bairro:</strong> ${data.bairro}</p>
+              <p><strong>Cidade/UF:</strong> ${data.localidade}/${data.uf}</p>
+            `;
+            document.getElementById("result").innerHTML = addressInfo;
+          }
+        })
+        .catch((error) => {
+          console.error("Ocorreu um erro na solicitação:", error);
+          document.getElementById("result").innerHTML = "Ocorreu um erro na solicitação.";
+        });
+    }
+  </script>
+</body>
+</html>
