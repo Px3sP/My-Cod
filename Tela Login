@@ -1,0 +1,255 @@
+<!-- TELA LOGIN --!>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <script src="https://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous">  </script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="formulario"> 
+        <form action="">
+            <h2 class="title">Entrar com sua conta</h2>
+
+            <label for="username"> Nome</label>
+            <div class="input">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>                 
+                <input id="username" name="username" placeholder="Username" type="text">
+            </div>       
+
+            <label for="email"> Email</label>
+            <div class="input"> 
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <input id="email" name="email" placeholder="Email" type="text"> 
+            </div>
+
+            <label for="senha">Senha</label>
+            <div class="input"> 
+                <i class="fa fa-key" aria-hidden="true"></i>
+                <input id="senha" name="senha" placeholder="Password" type="password">
+            </div>
+            
+            <div id="btn"> <button type="submit">Entrar</button></div>
+            <a href="site2.html"> Clique aqui para criar sua conta</a>
+            
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+*{ 
+    margin: 0;
+    padding: 0;
+}
+body{ 
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins' sans-serif;
+    background: linear-gradient(-45deg, #ffce51, #fd5754);
+
+
+}
+#formulario{ 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#fff;
+    border-radius: 10px;
+    padding: 60px;
+    width: min-content;
+    color: 2b344bb
+}
+.title{ 
+    font-size: 1.8em;
+    margin-bottom: 10%;
+}
+.input{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+
+}
+.input i{ 
+    font-size: 1.2em;
+    padding: 5px;
+    background: -webkit-linear-gradient(-45deg, #ff7253, #fd5754);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.input input{ 
+    width: 80%;
+    border: none;
+    outline: none ;
+}
+
+.input{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    
+}
+.input{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    
+}
+.btn{ 
+    margin-top: 15%;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- TELA DE CADASTRO --->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site2.css">
+    <title>Site</title>
+
+</head>
+<body>
+    <div id="conta"> 
+        <form action=""> 
+            <h2 class="title">Cadastrar</h2>
+
+            <label for="name">Nome : </label>
+            <div class="input">
+                <i class="fa-solid fa-dog"></i>
+                <input id="nome" name="name" placeholder="Nome " type="text">
+            </div>       
+
+            <label for="text"> Sobrenome</label>
+            <div class="input"> 
+                <i class="fa-solid fa-dog"></i>
+                <input id="text" name="text" placeholder="nome" type="text"> 
+            </div>
+            <label for=" Telefone"> Telefone</label>
+            <div class="input"> 
+                <input id="tel" name="telefone" placeholder="telefone" type="tel"><br></div>
+            
+                <label for="senha">Criar senha:</label>
+            <div class="input"> 
+                <input id="senha" name="senha" placeholder="Password" type="password"></div>
+                
+                <div id="botao"> <button type="submit">Cadastrar</button></div>
+        </form>
+    </div>
+   
+</body>
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+*{ 
+    margin: 0 ;
+    padding: 5px;
+}
+body{ 
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins' sans-serif;
+    background: linear-gradient(-45deg, #ffce51, #fd5754);
+}
+#conta{ 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#fff;
+    border-radius: 10px;
+    padding: 60px;
+    width: min-content;
+    color: #fd5754;
+
+}
+.title{ 
+    font-size: 1.5em;
+    margin-bottom: 10%;
+}
+.input{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
+.input input{ 
+    width: 80%;
+    border: none;
+}
+.input1{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+
+}
+.input{
+   font-size: 1.2em;
+   padding: 10spx;
+   background: -webkit-linear-gradient(-45, #ffce51, #ff7253, #fd6789);
+   
+   
+}
+.input2{ 
+    min-width: 280px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+
+}
+.input input{ 
+    width: 80%;
+    border: none;
+
+}
+.botao{ 
+    font-size: 1.0;
+    padding: 1px;
+}
+
+
+
+
+
+
