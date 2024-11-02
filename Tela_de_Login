@@ -1,0 +1,29 @@
+Tela de login feito em python, com a biblioteca *CUSTOMTKINTER*
+
+import customtkinter 
+
+janela = customtkinter.CTk()
+
+janela.geometry("400x300")
+janela.resizable(width= False, height= False) # largura e altura fixas
+customtkinter.set_appearance_mode("dark-blue")
+
+def clique(): 
+    print("acessar")
+
+texto = customtkinter.CTkLabel(janela, text= "Login")
+texto.pack(padx = 10, pady = 10)
+
+email = customtkinter.CTkEntry(janela, placeholder_text="E-mail")
+email.pack(padx = 10, pady = 10)
+
+senha = customtkinter.CTkEntry(janela, placeholder_text="Senha", show = "*")
+senha.pack(padx = 5, pady=5)
+
+lembrar = customtkinter.CTkCheckBox(janela, text=" lembrar do usuário")
+lembrar.pack(padx = 5, pady = 5)
+
+btn = customtkinter.CTkButton(janela, text= "acessar", command= clique)
+btn.pack(padx = 5, pady = 15)
+
+janela.mainloop()
