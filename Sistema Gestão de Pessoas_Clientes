@@ -1,0 +1,176 @@
+Sistema de Gestão de Pessoas
+Este projeto é um sistema de gestão de pessoas desenvolvido em Python. Ele permite cadastrar, atualizar e gerenciar dados de pessoas, que são armazenados automaticamente em uma planilha Excel.
+
+Tecnologias Utilizadas
+...Python
+...CustomTkinter para interface gráfica
+...openpyxl para manipulação de planilhas Excel
+
+Funcionalidades
+...Cadastro de novas pessoas
+...Salvamentos dados em uma planilha Excel
+
+Como Usar
+...Clone o repositório e instale as dependências necessárias.
+Execute o arquivo principal para iniciar a aplicação.
+Este projeto é uma ótima ferramenta para quem busca um sistema básico de controle de dados pessoais com armazenamento em Excel.
+
+
+
+import customtkinter as ctk
+from tkinter import *
+from tkinter import messagebox
+from tkinter import END
+import openpyxl, xlrd
+import pathlib
+from openpyxl import Workbook
+
+
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("blue")
+
+class Sistema(ctk.CTk): 
+    def __init__(self):
+            super().__init__() 
+            self.layour_conf()
+            self.aparencia()
+            self.todo_Sistema()
+
+    def layour_conf(self): 
+                    self.title("Sistema de gestão de clientes")
+                    self.geometry("750x500")
+
+     #função para mudar a cor do tema do sistema. 
+    def aparencia(self): 
+            self.tema_apararencia = ctk.CTkLabel(self, text = "Tema", bg_color= "transparent", text_color= ["#000", "#fff"]).place(x = 5 , y =430)   
+            self.opt_apm = ctk.CTkOptionMenu(self, values= ["Dark", "Light", "Sistema"], command= self.cor).place(x = 50, y=  430)
+
+    def  cor(self, new_aparencia_mod): 
+                ctk.set_appearance_mode(new_aparencia_mod)
+
+
+    def todo_Sistema(self): 
+            frame = ctk.CTkFrame(self, width= 450, height= 50, corner_radius= 0, bg_color= "#000", fg_color= "#000" ).place(x = 125, y = 0)
+            titulo = ctk.CTkLabel(frame, text = "Gestão de Clientes", font=  ("Arial", 25), text_color= "silver").place(x = 250, y = 20)
+
+            textoForm = ctk.CTkLabel(frame, text = "Preencha todos os campos do formulário", font=  ("Arial", 20), text_color= ["#000", "#fff"]).place (x = 50, y =75)
+            
+           
+            planilha = pathlib.Path('MeuArquivo.xlsx')
+        
+            if planilha.exists(): 
+                    pass
+            else: 
+                planilha = Workbook() 
+                folha = planilha.active
+                folha['A1'] = "Nome completo"
+                folha['B1'] = "Contato"
+                folha['C1'] = "Idade"  
+                folha['D1'] = "Genero"
+                folha['E1'] = "Endereco"
+                folha['F1'] = "Observações"
+                planilha.save('MeuArquivo.xlsx')
+            pass 
+
+            
+
+            def submit(): 
+                nome = name_value.get()
+                contato = contato_value.get() 
+                idade = idade_value.get()
+                endereco = endereco_value.get() 
+                genero = genero_combobox.get()
+                obs = obs_entry.get(0.0 ,END) 
+                
+                
+                #pegando os dados das pessoas 
+                ficheiro = openpyxl.load_workbook('MeuArquivo.xlsx')
+                folha = ficheiro.active
+                folha.cell(column = 1, row =folha.max_row+1 , value =  nome) 
+                folha.cell(column = 2, row =folha.max_row, value =  contato) 
+                folha.cell(column = 3, row =folha.max_row, value =  idade) 
+                folha.cell(column = 4, row =folha.max_row, value =  genero) 
+                folha.cell(column = 5, row =folha.max_row , value =  endereco) 
+                folha.cell(column = 6, row =folha.max_row , value =  obs) 
+
+                ficheiro.save(r'MeuArquivo.xlsx')
+                messagebox.showinfo("Sistema", "Dados salvos com sucesso!")
+
+
+
+            def limpar(): 
+                 name_value.set("")
+                 contato_value.set("")
+                 idade_value.set("")
+                 endereco_value.set("")
+                 obs_entry.delete(0.0, END)
+            pass    
+                    
+
+            #Texto variavel
+            name_value = StringVar()
+            contato_value = StringVar()
+            idade_value = StringVar()
+            endereco_value = StringVar() 
+            genero_value = StringVar()
+                
+
+            #Entrys
+            nome_entry = ctk.CTkEntry(self, width = 350, textvariable= name_value,font = ("Arial", 16), fg_color="transparent")
+            contato_entry = ctk.CTkEntry(self, width = 200, textvariable= contato_value ,font = ("Century Gothic bold", 16), fg_color="transparent")
+            idade_entry = ctk.CTkEntry(self, width = 35, textvariable= idade_value,font = ("Century Gothic bold", 16), fg_color="transparent")
+            endereo_entry = ctk.CTkEntry(self, width = 350, textvariable= endereco_value,font = ("Century Gothic bold", 16), fg_color="transparent")
+
+            #Combo Box
+            genero_combobox = ctk.CTkComboBox(self, values= ["Masculino", "Feminino"], font = ("Century Gothic bold", 15))
+            genero_combobox.set("Escolher")
+
+            #Entrada de obs
+            obs_entry = ctk.CTkTextbox(self, width= 400, height= 125, font = ("Arial", 20), border_color= "#aaa", border_width= 2, fg_color= "transparent")
+
+            #Labels
+            nome = ctk.CTkLabel(self, text = "Nome Completo:",font=  ("Arial", 15), text_color= ["#000", "#fff"])
+            contato = ctk.CTkLabel(self, text = "Contato:", font=  ("Arial", 15), text_color= ["#000", "#fff"])
+            idade = ctk.CTkLabel(self, text = "Idade:", font=  ("Arial", 15), text_color= ["#000", "#fff"])
+            genero = ctk.CTkLabel(self, text = "Genero:", font=  ("Arial", 15), text_color= ["#000", "#fff"])
+            endereco = ctk.CTkLabel(self, text = "Endereço:", font=  ("Arial", 15), text_color= ["#000", "#fff"])
+            obs = ctk.CTkLabel(self, text = "Observação: ", font=  ("Arial", 15), text_color= ["#000", "#fff"])
+
+            btn_submit = ctk.CTkButton(self, text = "Salvar".upper(), command= submit, fg_color= "silver", hover_color= "silver").place(x =300, y = 420)
+            btn_excluir = ctk.CTkButton(self, text="Limpar".upper(), command= limpar, fg_color= "red", hover_color="red").place(x = 500, y = 420)
+            
+
+            #posicionando os elementos na janela
+            nome.place(x = 50, y = 120)
+            nome_entry.place(x = 50, y= 150)
+
+            contato.place(x = 450, y =120)
+            contato_entry.place(x = 450, y = 150)
+
+            idade.place(x = 50, y = 190)
+            idade_entry.place(x = 50, y = 220)
+                
+            genero.place(x = 200, y = 190)
+            genero_combobox.place(x = 200, y= 220 )
+
+            endereco.place(x = 380, y = 190)
+            endereo_entry.place(x = 380, y = 220 )
+
+            obs.place(x = 50, y = 275)
+            obs_entry.place(x = 150, y = 275)
+
+if __name__ == "__main__": 
+        sistema = Sistema()
+        sistema.mainloop() 
+
+        
+
+
+
+
+
+
+
+
+
+
