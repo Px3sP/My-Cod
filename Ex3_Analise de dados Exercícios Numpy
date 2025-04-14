@@ -1,0 +1,25 @@
+#Indexação e fatiamento
+#Crie um array de 10 a 100 (de 10 em 10).
+
+#Pegue os 3 primeiros elementos.
+
+#Pegue os 3 últimos.
+
+#Inverta a ordem do array.
+
+import numpy as np 
+print("******************** Exercicio 1 ********************")
+lista_numeros = np.arange(10, 101,10)
+print("A sequencia ficará : ", lista_numeros)
+
+print("\n\n******************** Exercicio 2 ********************")
+
+#Para pegar qualquer elemento a partir de um determinado numero, basta realizar estes codigo abaixo
+lista_numero2 = lista_numeros
+lista_numero2 = lista_numeros[:3]
+print("Os 3 primeiro elemetos sera : ",lista_numero2)
+
+print("\n\n******************** Exercicio 3 ********************")
+
+invertido = lista_numeros[::-1]
+print("Os numeros invertidos : ",invertido)
