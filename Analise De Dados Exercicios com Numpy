@@ -1,0 +1,27 @@
+#Criar 1. Criar arrays
+
+#Crie um array com os números de 0 a 9.
+
+#Crie um array com 10 números iguais a 7.
+
+#Crie um array de zeros com tamanho 5 e com o elemento 0 de outro com tamanho 3 com elemento 1.
+
+import numpy as np 
+print("\n*************** Exercicio 1 ***************")
+print(np.array([1,2,3,4,5,6,7,8,9]))
+
+print("\n*************** Exercicio 2 ***************")
+#Para fazer uma lista com valores iguais basta usar o np.full((n,n)) Ou usar np.ones(10) * 7
+print(np.ones(10)* 7) 
+
+print("\nOU\n")
+
+print(np.full(10, 7))
+
+print()
+print("\n*************** Exercicio 4a ***************")
+
+print(np.zeros((1,5)))
+
+print("\n*************** Exercicio 4b ***************")
+print(np.ones((1, 3)))
