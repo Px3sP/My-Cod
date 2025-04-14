@@ -1,0 +1,27 @@
+#Estatísticas simples
+
+#Crie um array com 20 números aleatórios entre 1 e 100. --> [OK]
+
+#Calcule:
+
+#A média (mean)--> [OK]
+
+#O desvio padrão (std) --> []
+
+#O valor máximo (max) e mínimo (min) --> []
+
+import numpy as np 
+print("********************** Exercicio 1 **********************")
+array_random = np.random.randint(0, 101, size=20)
+print("Random Numbers : ",array_random)
+
+print("\n\n********************** Exercicio 2 **********************")
+#O mean() aparece quando eu quero saber a media; 
+media = array_random.mean()
+print(" A media de todos sera : ",media)
+
+
+print("\n\n********************** Exercicio 3 **********************")
+#O variavel.std() significa que eu quero o desvio padrao 
+d_Padrao = array_random.std()
+print(' The desvio padrao foi : ',d_Padrao)
