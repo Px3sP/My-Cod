@@ -1,0 +1,40 @@
+#Operações básicas
+
+#Crie dois arrays de mesmo tamanho com números aleatórios e:
+
+#Some os dois arrays.
+
+#Subtraia o segundo do primeiro.
+
+#Multiplique os dois.
+
+#Divida o primeiro pelo segundo (cuide com divisões por zero).
+
+import numpy as np 
+arrays1 = np.random.randint(1,11, size=5)
+arrays2 = np.random.randint(1,11, size=5)
+
+#Somando os 2 arrays 
+print("\n \n******************** Somando ********************")
+print(arrays1," + ", arrays2)
+print("Resultado : ", arrays1 + arrays2)
+
+#Subtraindo o segundo do primeiro
+print("\n \n******************** Subtraindo  ********************")
+print(" ",arrays2)
+print("-",arrays1)
+
+print("Resultado ---> ",arrays2 - arrays1)
+
+#Multiplicando 
+
+print("\n \n******************** Multiplicando ********************")
+
+print(" ", arrays2)
+print("*",arrays1)
+print("Resultado : ", arrays2 * arrays1)
+
+print("\n \n******************** Dividindo ********************")
+
+print(arrays1, " / ", arrays2)
+print("Resultado : ",arrays1 / arrays2)
