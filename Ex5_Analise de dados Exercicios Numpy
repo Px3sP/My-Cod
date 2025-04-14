@@ -1,0 +1,36 @@
+#Matrizes
+#Crie uma matriz 3x3 com números de 1 a 9. ---[OK]
+
+#Pegue apenas a primeira linha.---[OK]
+
+#Pegue a coluna do meio.---[OK]
+
+#Troque a última linha por zeros.---[OK]
+
+import numpy as np 
+
+print("*************** Exercicio 1 ***************")
+matriz = np.array([(1,2,3), (4,5,6) ,(7,8,9)])
+print("A matriz com 3x3 com numeros de 1 a 9\n\n", matriz,"\n\n")
+ #Podemos fazer de outro jeito tambem, para a criação da matriz : 
+
+matriz = np.arange(1, 10)
+print("Usando o metodo arange para criar a lista: ", matriz,"\n\n")
+print("Abaixo segue também a matriz realizada com outro método : \n\n",matriz.reshape(3, 3)) 
+
+print("************** Exercicio 2 ************** \n")
+#Para selecionar alguma coluna ou linha basta [0,0] sendo que, <0 = coluna, 0> linha 
+line_First = matriz[0 : 3]
+print("Primeira linha : ", line_First,"\n")
+
+
+#Mostrando a ultima coluna da matriz. 
+print("************** Exercicio 3 ************** \n")
+matriz2 = np.array([[1,2,3], [4,5,6], [7,8,9]])
+seg_line = matriz2[:, 2 ]
+print("Coluna do meio : ", seg_line,"\n")
+
+
+print("************** Exercicio 4 ************** \n")
+matriz2[2, :] = 0
+print("Apenas a ultima linha zerada : \n",matriz2)
