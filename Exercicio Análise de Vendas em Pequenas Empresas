@@ -1,0 +1,18 @@
+import numpy as np 
+
+vendas = np.array([1550,550,2000,3520,5010,1500,2500,1500,4000,5000])
+
+acima_media = vendas[vendas > vendas.mean()]
+print("Vendas acima da média:  ",acima_media)
+
+print("O total de vendas nos ultimos 10 dias foram:  ",vendas.sum())
+print("A média das vendas foi:  ",vendas.mean())
+print("O desvio padrão foi de:  ", vendas.std())
+print("A mediana das vendas:  ",np.median(vendas))
+print("A venda minima:  ", vendas.min())
+print("A venda maxima:  ",vendas.max())
+
+#Vendas no dia 5. 
+
+vendas_dia = vendas[4]
+print("Vendas no 5º dia:",vendas_dia)
