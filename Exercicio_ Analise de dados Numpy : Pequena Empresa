@@ -1,0 +1,65 @@
+import numpy as np 
+
+vendas_semana = np.array([
+    [2500, 150 , 300, 200, 210, 150, 245],
+    [5000, 120, 300, 200, 100, 120, 130],
+    [1500, 150, 450, 1000, 250, 175, 180],
+    [150, 200, 350, 275, 360, 160, 120],
+    [200, 150, 250, 400, 200, 120, 178],
+    [15000, 150, 450, 190, 150, 300, 200],
+])
+
+print("Total de vendas por vendedor na semana:  ")
+
+print("Vendedor 1:  ",np.sum(vendas_semana[0]))
+
+print("Vendedor 2:  ",np.sum(vendas_semana[1]))
+
+print("Vendedor 3:  ",np.sum(vendas_semana[2]))
+
+print("Vendedor 4:  ",np.sum(vendas_semana[3]))
+
+print("Vendedor 5:  ",np.sum(vendas_semana[4]))
+
+print("Vendedor 6:  ",np.sum(vendas_semana[5]),"\n")
+
+#Qual dia vendeu mais? 
+
+media_vendas_Vendedor = np.max(vendas_semana[0])
+print("Venda maxima do vendedor 1:  ",media_vendas_Vendedor)
+
+media_vendas_Vendedor = np.max(vendas_semana[1])
+print("Venda maxima do vendedor 2:  ",media_vendas_Vendedor)
+
+media_vendas_Vendedor = np.max(vendas_semana[2])
+print("Venda maxima do vendedor 3:  ",media_vendas_Vendedor)
+
+media_vendas_Vendedor = np.max(vendas_semana[3])
+print("Venda maxima do vendedor 4:  ",media_vendas_Vendedor)
+
+media_vendas_Vendedor = np.max(vendas_semana[4])
+print("Venda maxima do vendedor 5:  ",media_vendas_Vendedor)
+
+media_vendas_Vendedor = np.max(vendas_semana[5])
+print("Venda maxima do vendedor 6:  ",media_vendas_Vendedor)
+
+#Vendedor com maior venda no dias 
+vendedores = np.sum(vendas_semana, axis= 1)
+venda_Vendedor_Max = np.argmax(vendedores)
+top_venda = vendedores[venda_Vendedor_Max]
+
+print("Vendedor que vendeu mais:  ", venda_Vendedor_Max)
+print("Total da venda :", top_venda)
+
+#Menor venda e qual vendedor
+
+vendedor_loja = np.min(vendas_semana, axis=1 )
+venda_Minima = np.argmin(vendedor_loja)
+menor_venda = vendedor_loja[venda_Minima]
+print("\nVendedores com vendas mínima:  ",venda_Minima )
+print("Vendas minimas :  ",menor_venda)
+
+#Quantos vendedores tiveram a media acima de 2000 por dia
+medias = np.where (vendas_semana > 2000)
+
+print("\nVendedores que tiveram vendas acima de 2000:  ",medias[0])
