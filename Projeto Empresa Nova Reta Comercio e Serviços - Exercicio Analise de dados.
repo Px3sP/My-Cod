@@ -1,0 +1,115 @@
+#Empresa Nova Rota Comércio e Serviços
+# dados  da vendas (12 meses, 5 produtos)
+# Valores entre 50 e 500 unidades vendidas
+
+vendas_Ano = np.array([
+           #PRODUTOS
+    # 0   1    2    3    4  
+    [85 ,363 ,385 ,141, 166],
+    [337, 213, 271 ,337,381],
+    [ 60 ,180 ,423 ,485 ,349],
+    [ 70 ,434 ,270, 109 ,457],
+    [173,  52 ,443  ,99 ,121],
+    [362, 360, 138, 172, 326],
+    [ 76,190 , 57 ,415 ,271],
+    [181,140 ,104 ,312 ,383],
+    [ 71 ,310 ,217 ,148 ,311],
+    [439 ,436 ,434 ,311, 411],
+    [ 70, 416 ,395, 483 ,179],
+    [ 60, 400 ,315, 423 ,279]
+    ])
+print("\nVendas de janeiro a dezembro\n\n",vendas_Ano)
+print("\n**********************************************************\n")
+print("\n\nTotal de vendas nos meses")
+
+total_Vendas_Ano = np.sum(vendas_Ano[0])
+print("Vendas mês 1:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[1])
+print("Vendas mês 2:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[2])
+print("Vendas mês 3:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[3])
+print("Vendas mês 4:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[4])
+print("Vendas mês 5:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[5])
+print("Vendas mês 6:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[6])
+print("Vendas mês 7:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[7])
+print("Vendas mês 8:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[8])
+print("Vendas mês 9:  ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[9])
+print("Vendas mês 10: ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum(vendas_Ano[10])
+print("Vendas mês 11: ",total_Vendas_Ano)
+
+total_Vendas_Ano = np.sum (vendas_Ano[11])
+print("Vendas mês 12: ",total_Vendas_Ano)
+print("\n**********************************************************\n")
+
+#Produto com mais venda, quanto vendeu. 
+total_prod = np.sum(vendas_Ano, axis= 0)
+
+indice_produto = np.argmax(total_prod)
+
+coluna_Maior_Venda = vendas_Ano[:,indice_produto]
+
+mes_venda = np.argmax(coluna_Maior_Venda)
+
+
+
+print("\n\nProduto que teve maior venda")
+print("Produto: ",np.argmax(coluna_Maior_Venda), "\nVenda:  ", np.max(vendas_Ano),"\n\n")
+
+
+print("\n**********************************************************\n")
+
+print("Media mensal") 
+
+media_mensal = np.mean(vendas_Ano[0])
+print("Média mês 1:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[1])
+print("Média mês 2:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[2])
+print("Média mês 3:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[3])
+print("Méedia mês 4:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[4])
+print("Média mês 5:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[5])
+print("Média mês 6:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[6])
+print("Média mês 7:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[7])
+print("Média mês 8:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[8])
+print("Média mês 9:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[9])
+print("Média mês 10: ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[10])
+print("Média mês 11:  ",media_mensal)
+
+media_mensal = np.mean(vendas_Ano[11])
+print("Média mês 12:  ",media_mensal)
